@@ -1,0 +1,41 @@
+.TH COKE 1 1/20/83
+.CM 3
+.SH "NAME"
+coke \- See if any Coke is in the terminal room Coke machine
+.SH "SYNOPSIS"
+/usr/local/bin/coke [ -v ]
+.SH "DESCRIPTION"
+The
+.IR coke (1)
+program tells the status of the six columns of the terminal room
+Coke machine.
+For each column, the flavor and the full or empty status is printed.
+For full columns, the number of minutes the bottom bottle has
+been in the machine is printed.
+.sp
+The
+.B -v
+(verbose) options is intended primarily for debugging.
+It prints the times for the first and second bottles in a column and
+the time for the remainder of the column.
+When a column is empty, two
+bottles are still in the machine.
+However, the ``rest of column'' number
+is meaningless for empty columns.
+.SH "FILES"
+.TP
+/dev/enet*
+Used to poll Coke Machine Status Protocol server.
+.i0
+.DT
+.PP
+.SH "SEE ALSO"
+[Onyx]<CMUNetworkDocs>CokeProtocol.press for a description of the
+Coke Machine Status Protocol.
+.SH HISTORY
+.TP
+31-Jan-83  David Nichols (nichols) at Carnegie-Mellon University
+Coke now prints times for bottom bottle.
+.TP
+20-Jan-83  David Nichols (nichols) at Carnegie-Mellon University
+Created.
